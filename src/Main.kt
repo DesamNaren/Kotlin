@@ -6,7 +6,7 @@ fun main() {
         println(greeting)
     }
 
-    // When Cond
+    // When Condition
     when (greeting) {
         null -> println("Null Greeting")
         else -> println(greeting)
