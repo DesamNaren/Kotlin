@@ -1,7 +1,7 @@
 var greeting: String? = null
 
 fun main() {
-    // If Cond
+    // If Condition
     if (greeting != null) {
         println(greeting)
     }
