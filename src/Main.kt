@@ -1,34 +1,38 @@
-var greeting: String? = null
-
 fun main() {
-    // If Condition
-    if (greeting != null) {
-        println(greeting)
+    val things = arrayOf("Kotlin", "Programming", "Language")
+    println(things)
+    println(things.size)
+    println(things[0])
+    println(things.get(0))
+
+    things.forEach { thing -> // lambda expression.
+        // If you have a function and it is only having parameter as another function
+        println(thing)
     }
 
-    // When Condition
-    when (greeting) {
-        null -> println("Null Greeting")
-        else -> println(greeting)
+    things.forEachIndexed { index, thing ->
+        println("$index $thing")
     }
 
-    sayHello()
-    sayHello("Naren")
-    sayHello("Naren", "Welcome")
+
+    val thingsList = listOf("Kotlin", "Programming", "Learning")
+    thingsList.forEach {
+        println(it)
+    }
+
+    thingsList.forEachIndexed { index, thing ->
+        println("$index $thing")
+    }
+
+
+    val map = mapOf(1 to "a", 2 to "b", 3 to "c")
+    map.forEach { (key, value) -> println("$key -> $value") }
+
+    sayHi("Hey", thingsList)
 }
 
-fun sayHello(){// Return type is Unit
-    println("Hello Unit Function")
+fun sayHi(greeting: String, things: List<String>) {
+    things.forEach { thing ->
+        println("$greeting $thing")
+    }
 }
-
-fun sayHello(name: String){
-    println("Hello  $name") //  String Templates
-}
-
-
-fun sayHello(name: String, greeting:String){
-    println("$name  $greeting") //  String Templates
-}
-
-// Above all are top-order functions that means they are enclosed in any class,
-// they are free from class level dependency
