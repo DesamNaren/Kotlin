@@ -1,38 +1,18 @@
 fun main() {
-    val things = arrayOf("Kotlin", "Programming", "Language")
-    println(things)
-    println(things.size)
-    println(things[0])
-    println(things.get(0))
 
-    things.forEach { thing -> // lambda expression.
-        // If you have a function and it is only having parameter as another function
-        println(thing)
-    }
-
-    things.forEachIndexed { index, thing ->
-        println("$index $thing")
-    }
+    // If you do not have any properties or any arguments defined in primary constructor
+    // then you can omit the primary constructor
+//    val person = Person() // This will call primary constructor
+    val person = Person("Naren", "Reddy") // This will call primary constructor
 
 
-    val thingsList = listOf("Kotlin", "Programming", "Learning")
-    thingsList.forEach {
-        println(it)
-    }
+    // We are not using any getters here. This is called Property Access Syntax
+    person.firstName
+    person.lastName
+//    person.nickName = "Nani"
+//    person.nickName = "Naren"
+//    person.nickName = "Nani"
+//    person.nickName
 
-    thingsList.forEachIndexed { index, thing ->
-        println("$index $thing")
-    }
-
-
-    val map = mapOf(1 to "a", 2 to "b", 3 to "c")
-    map.forEach { (key, value) -> println("$key -> $value") }
-
-    sayHi("Hey", thingsList)
-}
-
-fun sayHi(greeting: String, things: List<String>) {
-    things.forEach { thing ->
-        println("$greeting $thing")
-    }
+    person.printInfo()
 }
